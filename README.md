@@ -1,20 +1,63 @@
-<<<<<<< HEAD
-# task-app
-=======
-# React + Vite
+# Task App (React Forms and Routing)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small React app with a task list, a task detail page and a task form with validation. It uses React Router and mock data.
 
-Currently, two official plugins are available:
+## Features
+- Task list page (`/`)
+- Task detail page with direct links (`/tasks/1`)
+- New task form with validation (`/tasks/new`)
+- "Task not found" message for invalid ids
+- Mock fetch with simulated delay
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- React (Vite)
+- React Router DOM
 
-## React Compiler
+## Requirements
+- Node.js 18 or higher
+- npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Run
 
-## Expanding the Oxlint configuration
+```bash
+# 1. Clone the repository
+git clone https://github.com/Suman748/task-app.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
->>>>>>> 6cf46a5 (Initial Vite React setup)
+# 2. Go into the project folder
+cd task-app
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
+```
+
+Open http://localhost:5173 in your browser.
+
+## Routes
+
+| Path | Page |
+|---|---|
+| `/` | Task list |
+| `/tasks/new` | New task form |
+| `/tasks/:id` | Task detail |
+
+## Project Structure
+
+```
+src/
+  data/tasks.js        mock data and fetch function
+  pages/TaskList.jsx   list screen
+  pages/TaskDetail.jsx detail screen
+  pages/TaskForm.jsx   form with validation
+  main.jsx             router setup
+```
+
+## How to Test
+1. Open `/tasks/new`, submit an empty or short title, and the validation error shows.
+2. Open `/tasks/1` directly in the browser and the detail page loads.
+3. Open `/tasks/999` and the "Task not found" message shows.
+
+## Author
+Suman748
